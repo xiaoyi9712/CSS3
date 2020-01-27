@@ -1,0 +1,80 @@
+<!doctype html> <!--着重强调声明:我这是一个html5 的页面,-->
+<html> <!-- 页面的所有内容 涵盖整体 -->
+	<head>
+		<meta charset="utf-8"><!--meta 原标签 支持中文的万国码-->
+		<meta name="keywords" content="小白 模板"><!--关键词-->
+		<meta name="description" content="小白 不晓得">
+		<title>小白的模板</title><!--页面的标题-->
+		<style>
+			body,p,h1,h2,h3,h4,h5,h6,ul{
+				margin:0;
+			}
+			ul{
+				padding-left:0;
+				list-style-type:none;
+			}
+			a{
+				text-decoration:none;
+				color: #222;
+			}
+			input{
+				margin:0;
+				padding:0;
+				outline:none;/*和border一样的写法*/
+				border:none;
+			}
+			.clearfix:after{
+				content:".";
+				font-size:0;
+				height:0;
+				display:block;
+				overflow:hidden;
+				clear:both;
+			}
+			/* 样式初始化 */
+			.box{
+				width:180px;
+				height:300px;
+				/* border:1px solid #ccc; */
+				background:url("./4.png");
+				animation:run 1s infinite alternate steps(6);/*闪现运动,7帧画,6次运动*/
+			}
+			@keyframes run{
+				from{
+				background-position:0% 0%;
+				}
+				to{
+				background-position:100% 100%;
+				}
+			}
+			.box:hover{
+				animation:run .5s infinite alternate steps(6);
+			}
+			.big{
+				position:relative;
+				width:180px;
+				height:300px;
+				/* border:1px solid red; */
+				animation:move 6s infinite alternate linear ;/*运动时间 6秒 无限次运动 往返运动 匀速运动*/
+				transform:scale(-1,1);/*按照x y轴放大缩小,负值表示镜像颠倒*/
+			}
+			@keyframes move{
+				from{
+				left:0;
+				}
+				to{
+				left:100%;
+				}
+			}
+			.big:hover{
+				transform:scale(1,1);
+				animation-play-state:paused;/*暂停动画*/
+			}
+		</style>
+	</head><!--储存页面的基础信息内容(标题,编码格式)-->
+	<body><!--灵魂-- 页面的具体表现内容-->
+		<div class="big">
+			<div class="box"></div>
+		</div>
+	</body>
+</html> <!-- 结束标签-->
